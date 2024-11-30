@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app">
+        <h1 class="wel">Список дел</h1>
+        <hr>
+        <input class="inputWindow" type="text" v-model="note">
+        <button @click="add()">+</button>
+        <hr>
+
+        <div v-if="active">
+            <div class="note" v-for="(item, i) in notes">
+                {{item}}
+                <button @click="del(i)">-</button>
+            </div>    
+        </div>
+
+        
+        <div v-else="active">
+            <div class="note" v-for="(item, i) in basket">
+                {{item}}
+            </div>    
+        </div>
+
+        <hr>
+        <button @click="active=true" v-if="notes.length == 0">дел пока нет</button>
+        <button @click="active=true" v-else>Дел осталось: {{notes.length}}</button>
+        <button @click="active=false">В корзине: {{basket.length}}</button>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+    <script>Vue.createApp({
+        data(){
+            return{
+                note: "",
+                notes: [],
+                basket: [],
+                active: true
+            }
+        }, methods:{
+            add(){
+                if (this.note != ''){
+                    this.notes.push( this.note )
+                    this.note = ''
+                }
+            },
+            del(index){
+                this.basket.push(this.notes[index]) //перемещение из одного массива в другой по индексу
+                this.notes.splice(index, 1)
+            }
+        }
+    }).mount('.app')
+    </script>
+</body>
+</html>
+<style>
+    .note{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px
+}
+
+.wel{
+    display: flex;
+    justify-content: center;
+}
+
+.inputWindow{
+    width: 500px;
+}
+
+.apply{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    width: 250px;
+    height: 250px;
+}
+</style>

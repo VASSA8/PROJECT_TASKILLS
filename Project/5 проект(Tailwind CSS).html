@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Chords</title>
+    <link href="public/output.css" rel="stylesheet">
+</head>
+<body class="m-0 p-0 bg-[url('https://tse3.mm.bing.net/th?id=OIG1.YqSrzoFvAEA.UaAaR_h8&pid=ImgGn')] bg-contain bg-fixed">
+    <header class="w-[100%] bg-[#070932] border-solid border-[1px] border-black py-[10px] fixed ">
+        <div class="my-0 mx-auto max-w-[99%]">      
+            <div class="flex justify-betweens">
+                <div class="absolute z-[-1] w-[50px] h-[50px] bg-[#006098] rounded-[15px]"></div>
+                    <svg id="list" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="cursor-pointer bi bi-list hover:fill-[#099e09] border-black border-[4px] border-solid hover:border-[#099e09] rounded-[15px]" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                      </svg> <!--КНОПКА ВСПЛЫВАЮЩЕГО НАВИГАЦИОННОГО МЕНЮ-->
+                <div id="reg" class="flex justify-between cursor-pointer">
+                    <div class="absolute z-[-999] right-[18px] w-[50px] h-[50px] bg-[#006098] rounded-[100%]"></div>
+                    <div class="text-white underline absolute right-[75px] top-[20px]">Регистрация</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="absolute right-[18px] bi bi-person-circle hover:fill-[#099e09]" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                      </svg> <!--КНОПКА МЕНЮ АККАУНТА-->
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="fixed bg-[#006098] w-[295px] h-[215px] rounded-[17px] right-0 bottom-0 select-none">  <!--АВТОПРОКРУТКА-->
+            <div class="text-4xl text-center">Автопрокрутка</div>
+            <div id="counter" class="flex justify-around select-none" data-counter>
+                <div id="button-plus" class="counter-button"><img class="bg-[#8EC0CF] rounded-[100%]" src="/icon/plus-circle.svg" alt="+" width="50px" height="50px"></div>
+                <input type="text" id="counter_input" class="w-[100px] h-[50px] bg-[#8EC0CF] text-4xl flex justify-center items-center text-center" disabled value="0">
+                <div id="button-minus" class="counter-button"><img class="bg-[#8EC0CF] rounded-[100%]" src="/icon/dash-circle.svg" alt="-" width="50px" height="50px"></div>
+            </div>
+            <div class="text-4xl text-center">Размер текста</div>
+            <div id="counter" class="flex justify-around select-none" data-counter>
+                <div id="text_button-plus" class="counter-button_text"><img class="bg-[#8EC0CF] rounded-[100%]" src="/icon/plus-circle.svg" alt="+" width="50px" height="50px"></div>
+                <input type="text" id="counter_input_text" class="w-[100px] h-[50px] bg-[#8EC0CF] text-4xl flex justify-center items-center text-center" disabled value="0">
+                <div id="text_button-minus" class="counter-button_text"><img class="bg-[#8EC0CF] rounded-[100%]" src="/icon/dash-circle.svg" alt="-" width="50px" height="50px"></div>
+            </div>
+        </div>
+    <main id="scroll_show" class="flex">
+        <div id="popup_reg" class="h-[50%] max-w-sm bg-[#CFE8FF] right-0 top-[72px] border-[#070932] border-solid border-[2px] rounded-b-[20px] p-[20px] text-2x1 hidden fixed">
+            <div class="mb-5">
+                <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Придумайте логин</label>
+                <input type="text" id="account" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Введите логин" required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Придумайте пароль</label>
+                <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Повторите пароль</label>
+                <input type="password" id="passwordp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+            </div>
+            <div class="flex items-start mb-5">
+                <div class="flex items-center h-5">
+                    <input id="check" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                </div>
+                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Я согласен на обработку пресональных данных</label>
+            </div>
+            <button id="submit" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Продолжить</button>
+            <div class="mb-5">
+                <div id="message" class="my-[20px] text-red-500"></div>
+            </div>
+        </div>
+        
+        <div id="popup_menu" class="bg-[#CFE8FF] border-[#070932] border-solid border-[2px] rounded-b-[20px] w-[23%] h-[80%] z-[50] fixed left-0 top-[71px] p-[20px] text-2xl hidden"> <!--ВСПЛЫВАЮЩЕЕ НАФИГАЦИОННОЕ МЕНЮ-->
+            <p>Сплин</p> 
+            <div class="pl-[20px]">
+                <a class="hover:text-[#2b5819]" href="/#disain">Это всё</a><br>
+                <a class="hover:text-[#2b5819]" href="/#bebebe">ещё что-то</a><br>
+                <a class="hover:text-[#2b5819]" href="/#bebebe">ещё что-то</a><br>
+                <a class="hover:text-[#2b5819]" href="/#bebebe">ещё что-то</a><br>
+                <a class="hover:text-[#2b5819]" href="/#bebebe">ещё что-то</a><br>
+            </div>
+        </div>
+        <div class="my-0 mx-auto p-[49px] max-w-[60%] bg-white">
+            <div class="text-5xl flex text-center m-[40px]">
+                <p>Welcome!<br>Вас приветсвует большое количество песен, разных исполнителей и жанров!</p>
+            </div>
+            <div class="disain" id="disain">
+                <div class="bg-[#006098] h-auto w-[99%] rounded-[17px] flex justify-between"> <!--ЗАГОЛОВОК ПЕСНИ И АВТОРА-->
+                    <div class="flex text-center my-auto mx-[1%] text-4xl text-white">ДДТ - Это всё, аккорды.</div>
+                </div>
+                <div class="w-[100%] h-[100%] mt-[-273px]"></div>
+                <div class="bg-[#8EC0CF] border-[2px] border-solid border-black rounded-[17px] w-[99%] h-[512px] mt-[300px]"> <!--ОКНО ДЛЯ АККОРДОВ-->
+                    <div class="ml-[5%] text-4xl">
+                        <h1>Аппликатуры аккордов</h1>
+                    </div>
+                    <div class="flex justify-between m-[20px]">
+                        <div class="flex flex-wrap">
+                            <img class="w-[140px] h-[140px]" src="/icon/D_0.svg" alt="аккорд D">
+                            <img class="w-[140px] h-[140px]" src="/icon/G_0.svg" alt="аккорд G">
+                            <img class="w-[140px] h-[140px]" src="/icon/C_0.svg" alt="аккорд C">
+                            <img class="w-[140px] h-[140px]" src="/icon/DsFw_0.svg" alt="аккорд D/F#">
+                            <img class="w-[140px] h-[140px]" src="/icon/Am_0.svg" alt="аккорд Am">
+                            <img class="w-[140px] h-[140px]" src="/icon/Em_0.svg" alt="аккорд Em">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class=""> <!--РАЗМЕР ТЕКСТА-->
+                <div class="splin">
+                    <div class="text-4xl my-[5%] mx-[5%]">
+                        <div class="kiplet1">
+                            <div class="song1/1"><span class="p-[150px]">G</span><br>Побледневшие листья окна</div>
+                            <div class="song1/2"><span class="p-[110px]">D/F#</span><br>Зарастают прозрачной водой.</div>
+                            <div class="song1/3"><span class="p-[90px]">Em</span><br>У воды нет ни смерти ни дна.</div>
+                            <div class="song1/4"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>Я прощаюсь с тобой</div>
+                            <div class="song1/5"><br><span class="p-[150px]">G</span><br>Горсть тепла после долгой зимы -</div>
+                            <div class="song1/6"><span class="p-[110px]">D/F#</span><br>Донесем. Пять минут до утра -</div>
+                            <div class="song1/7"><span class="p-[90px]">Em</span><br>Доживем. Наше море вины</div>
+                            <div class="song1/8"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>Поглощает время - дыра</div>
+                            <div class="song1/9"><span></span><br><br>Припев: (перебор 2)</div>
+                        </div>
+                        <div class="ml-[10%]">
+                            <div class="song1/10"><span class="pl-[100px]">G</span><span class="pl-[120px]">D</span><span class="p-[100]">Em</span><span>C</span><br> Это всё, что останется после меня</div>
+                            <div class="song1/11"><span>G</span><span>D</span><span>Em</span><span>C</span><br> Это всё, что возьму я с собой</div>
+                        </div>
+                        <div class="kuplet2">
+                            <div class="song1/1"><span class="p-[150px]">G</span><br>С нами память сидит у стола,</div>
+                            <div class="song1/2"><span class="p-[110px]">D/F#</span><br>А в руке ее пламя свечи.</div>
+                            <div class="song1/3"><span class="p-[90px]">Em</span><br>Ты такой хорошей была,</div>
+                            <div class="song1/4"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>Посмотри на меня, не молчи.</div>
+                            <div class="song1/5"><br><span class="p-[150px]">G</span><br>Крики чайки на белой стене</div>
+                            <div class="song1/6"><span class="p-[110px]">D/F#</span><br>Окольцованы черной луной.</div>
+                            <div class="song1/7"><span class="p-[90px]">Em</span><br>Нарисуй что-нибудь на окне</div>
+                            <div class="song1/8"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>И шепни на прощанье рекой</div>
+                            <div class="song1/9"><span></span><br><br>Припев: (перебор 2)</div>
+                        </div>
+                        <div class="ml-[10%]"></div>
+                            <div class="song1/10"><span class="pl-[100px]">G</span><span class="pl-[120px]">D</span><span class="p-[100]">Em</span><span>C</span><br> Это всё, что останется после меня</div>
+                            <div class="song1/11"><span>G</span><span>D</span><span>Em</span><span>C</span><br> Это всё, что возьму я с собой</div>
+                        </div>
+                        <div class="text-4xl my-[5%] mx-[5%]">
+                            (бой)
+                            <div class="song1/1"><span class="p-[150px]">G</span><br>С нами память сидит у стола,</div>
+                            <div class="song1/2"><span class="p-[110px]">D/F#</span><br>А в руке ее пламя свечи.</div>
+                            <div class="song1/3"><span class="p-[90px]">Em</span><br>Ты такой хорошей была,</div>
+                            <div class="song1/4"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>Посмотри на меня, не молчи.</div>
+                            <div class="song1/5"><br><span class="p-[150px]">G</span><br>Крики чайки на белой стене</div>
+                            <div class="song1/6"><span class="p-[110px]">D/F#</span><br>Окольцованы черной луной.</div>
+                            <div class="song1/7"><span class="p-[90px]">Em</span><br>Нарисуй что-нибудь на окне</div>
+                            <div class="song1/8"><span class="p-[120px]">C</span><span class="p-[40px]">D</span><br>И шепни на прощанье рекой</div>
+                            <div class="song1/9"><span></span><br><br>Припев: (перебор 2)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="w-[100%]">
+        <div class="w-[100%] h-[300px] bg-gray-800"></div>
+    </footer>
+    <script src="/main.js"></script>
+</body>
+</html>
